@@ -32,7 +32,6 @@ export const ProfileScreen: React.FC = () => {
       Alert.alert('Done', 'Tokens created and saved');
     } catch (error) {
       Alert.alert('Error', 'Failed to create tokens');
-      console.error(error);
     } finally {
       setLoading(false);
     }
@@ -48,12 +47,29 @@ export const ProfileScreen: React.FC = () => {
     <View style={styles.container}>
       <Text style={styles.title}>Create account</Text>
 
-      <TextInput style={styles.input} placeholder="Email" placeholderTextColor="#94a3b8"
-        value={email} onChangeText={setEmail} autoCapitalize="none" keyboardType="email-address" />
-      <TextInput style={styles.input} placeholder="First name" placeholderTextColor="#94a3b8"
-        value={firstName} onChangeText={setFirstName} />
-      <TextInput style={styles.input} placeholder="Last name" placeholderTextColor="#94a3b8"
-        value={lastName} onChangeText={setLastName} />
+      <TextInput
+        style={styles.input}
+        placeholder="Email"
+        placeholderTextColor="#94a3b8"
+        value={email}
+        onChangeText={setEmail}
+        autoCapitalize="none"
+        keyboardType="email-address"
+      />
+      <TextInput
+        style={styles.input}
+        placeholder="First name"
+        placeholderTextColor="#94a3b8"
+        value={firstName}
+        onChangeText={setFirstName}
+      />
+      <TextInput
+        style={styles.input}
+        placeholder="Last name"
+        placeholderTextColor="#94a3b8"
+        value={lastName}
+        onChangeText={setLastName}
+      />
 
       <TouchableOpacity
         style={[styles.btn, !isValid && styles.btnDisabled]}
@@ -83,8 +99,13 @@ const styles = StyleSheet.create({
   container: { flex: 1, padding: 20, backgroundColor: '#0f172a' },
   title: { fontSize: 24, fontWeight: 'bold', color: '#ffffff', marginBottom: 24, textAlign: 'center' },
   input: {
-    backgroundColor: '#1e293b', color: '#ffffff', borderRadius: 8,
-    paddingHorizontal: 14, paddingVertical: 12, marginBottom: 12, fontSize: 16,
+    backgroundColor: '#1e293b',
+    color: '#ffffff',
+    borderRadius: 8,
+    paddingHorizontal: 14,
+    paddingVertical: 12,
+    marginBottom: 12,
+    fontSize: 16,
   },
   btn: { backgroundColor: '#6366f1', borderRadius: 8, paddingVertical: 14, alignItems: 'center', marginTop: 8 },
   btnDisabled: { backgroundColor: '#4b5563' },
